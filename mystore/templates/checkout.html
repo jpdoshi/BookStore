@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}
+Checkout
+{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+  <div class="row">
+    <div class="col-md-4 order-md-2 mb-4">
+      <h4 class="d-flex justify-content-between align-items-center mb-3">
+        <span class="text-muted">Your Cart</span>
+      </h4>
+    <ul class="list-group mb-3">
+      	{% for item in cart_items %}
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+          <h6 class="my-auto">{{ item.product.title }}</h6>
+          <span class="text-muted">${{ item.item_total|floatformat }}</span>
+        </li>
+        {% endfor %}
+        <li class="list-group-item d-flex justify-content-between">
+          <span>Total (USD)</span>
+          <strong>${{ total_amount }}</strong>
+        </li>
+    </ul>
+</div>
+    <div class="col-md-8 order-md-1">
+      <h4 class="mb-3">Billing Address</h4>
+      <form action="/place-order" method="post">
+      	{% csrf_token %}
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="firstName">First name</label>
+            <input type="text" name="fname" class="form-control" id="firstName" required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="lastName">Last name</label>
+            <input type="text" name="lname" class="form-control" id="lastName" required>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="username">Username</label>
+          <div class="input-group">
+            <span class="input-group-text">@</span>
+            <input type="text" name="uname" class="form-control" id="username" placeholder="Username">
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="email">Email <span class="text-muted">(Optional)</span></label>
+          <input type="email" name="email" class="form-control" id="email" placeholder="you@example.com">
+        </div>
+        <div class="mb-3">
+          <label for="phno">Phone No</label>
+          <input type="text" name="phno" class="form-control" id="phno" name="phno" required>
+        </div>
+        <div class="mb-3">
+          <label for="address">Address</label>
+          <textarea class="form-control" name="address" rows="4" id="address" placeholder="1234 Main St"></textarea>
+        </div>
+        <hr class="mb-4">
+        <input type="hidden" name="amount" value="{{ total_amount }}">
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Place Order Now</button>
+      </form>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}
+Error
+{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+	<h1>Error Occured</h1>
+	<p>{{ msg }}</p>
+	<p><span class="fw-bold">Error</span> - {{ error }}</p>
+</div>
+{% endblock %}

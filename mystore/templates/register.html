@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}
+Register
+{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+	<div class="mb-5 text-center">
+		<h1>Register</h1>
+	</div>
+    <div class="row">
+      	<div class="col-md-6 offset-md-3">
+          	<form action="/add-user" method="post">
+          	{% csrf_token %}
+	            <div>
+		            <div class="mb-3">
+		            	<label for="username">Enter Username</label>
+		              	<input type="text" class="form-control" name="username" id="username" aria-describedby="emailHelp" required>
+		            </div>
+		            <div class="mb-3">
+		            	<label for="password">Enter Password</label>
+		              	<input type="password" class="form-control" name="password" id="password" required>
+		            </div>
+		            <div class="mb-3">
+		            	<label for="fname">First Name</label>
+		              	<input type="text" class="form-control" name="fname" id="fname" required>
+		            </div>
+		            <div class="mb-3">
+		            	<label for="lname">Last Name</label>
+		              	<input type="text" class="form-control" name="lname" id=lname" required>
+		            </div>
+		            <div class="mb-3">
+		            	<label for="phno">Phone No</label>
+		              	<input type="text" class="form-control" name="phno" id="phno" required>
+		            </div>
+		            <div class="mb-3">
+		            	<label for="address">Enter Address</label>
+		              	<textarea class="form-control" name="address" id="address" rows="4" required></textarea>
+		            </div>
+		            <button type="submit" class="btn btn-primary mb-4 w-100">Register</button>
+		        </div>
+          	</form>
+      	</div>
+    </div>
+</div>
+{% endblock %}

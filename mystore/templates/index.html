@@ -1,0 +1,168 @@
+{% extends "base.html" %}
+
+{% block title %}
+Welcome
+{% endblock %}
+
+{% load static %}
+
+{% block content %}
+<div class="container col-xxl-8 px-4 py-5">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      <div class="col-10 col-sm-8 col-lg-6">
+        <img src="{% static 'hero.jpg' %}" class="d-block mx-lg-auto img-fluid" loading="lazy">
+      </div>
+      <div class="col-lg-6">
+        <h1 class="display-5 lh-1 mb-3">Order from over <span class="text-primary">10k+</span> Books now!</h1>
+        <p class="lead py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+          <a href="/user" class="btn btn-primary btn-lg px-4 me-md-2">Login</a>
+          <a href="#categories" class="btn btn-outline-primary btn-lg px-4">Shop Now</a>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="container my-5">
+	<h1 class="text-center mb-4">Shop by Categories</h1>
+	<div class="row row-gap-3 my-5" id="categories">
+		<div class="col-12 col-lg-6 col-xl-4">
+			<div class="card">
+				<div class="card-body">
+					<h4 class="card-title">Action</h4>
+					<p class="card-text">Action genre is characterized by more emphasis on exciting action sequences rather than character development or story telling. Generally, Heroes are shown more powerful than real life.</p>
+					<a href="/categories/action" class="stretched-link"></a>
+				</div>
+			</div>
+		</div>
+		<div class="col-12 col-lg-6 col-xl-4">
+			<div class="card">
+				<div class="card-body">
+					<h4 class="card-title">Mystery</h4>
+					<p class="card-text">Mystery genre is a loosely-defined term that is often used as a synonym of detective fiction - in other words, a novel or short story in which a detective (either professional or amateur) solves a crime.</p>
+					<a href="/categories/mystery" class="stretched-link"></a>
+				</div>
+			</div>
+		</div>
+		<div class="col-12 col-lg-6 col-xl-4">
+			<div class="card">
+				<div class="card-body">
+					<h4 class="card-title">Fantasy</h4>
+					<p class="card-text">Fantasy is a genre that uses magic and other supernatural forms as a primary element of plot or theme. Fantasy is generally distinguished from science fiction and horror.</p>
+					<a href="/categories/fantasy" class="stretched-link"></a>
+				</div>
+			</div>
+		</div>
+		<div class="col-12 col-lg-6 col-xl-4">
+			<div class="card">
+				<div class="card-body">
+					<h4 class="card-title">Fiction</h4>
+					<p class="card-text">Fiction is the telling of stories which are not real. More specifically, fiction is an imaginative form of narrative, one of the four basic rhetorical modes.</p>
+					<a href="/categories/fiction" class="stretched-link"></a>
+				</div>
+			</div>
+		</div>
+		<div class="col-12 col-lg-6 col-xl-4">
+			<div class="card">
+				<div class="card-body">
+					<h4 class="card-title">Literature</h4>
+					<p class="card-text">Literature is the art of written works. Two most basic written literary categories include fiction and non-fiction, although "literature" in popular use can also mean a sub-genre of fiction called literary fiction.</p>
+					<a href="/categories/literature" class="stretched-link"></a>
+				</div>
+			</div>
+		</div>
+		<div class="col-12 col-lg-6 col-xl-4">
+			<div class="card">
+				<div class="card-body">
+					<h4 class="card-title">Novel</h4>
+					<p class="card-text">Novel is a long prose narrative that usually describes fictional characters and events in the form of a sequential story. Novel is today the longest genre of narrative prose.</p>
+					<a href="/categories/novel" class="stretched-link"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container my-5 pt-4">
+	<h1 class="text-center mb-lg-0">About Us</h1>
+	<div class="row align-items-center">
+		<div class="col-12 col-lg-5">
+			<img src="{% static 'about.jpg' %}" class="w-100">
+		</div>
+		<div class="col-12 px-3 col-lg-7 mt-4 mt-lg-0">
+			<p style="font-size: large;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+			<p style="font-size: large;">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+		</div>
+	</div>
+</div>
+<div class="container my-5 pt-4">
+	<h1 class="mb-4 text-center">Testimonials</h1>
+	<div class="row my-4 g-3">
+		<div class="col-12 col-md-4">
+			<div class="card border">
+				<div class="card-body">
+					<div class="d-flex">
+						<img src="{% static 'customer-1.jpg' %}" class="rounded-circle" style="height: 64px;">
+						<div class="ms-3">
+							<h5 class="mb-0">Dwayne Johnson</h5>
+							<p class="mb-0 text-primary" style="letter-spacing: 4px;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half"></i></p>
+						</div>
+					</div>
+					<hr>
+					<div>
+						<p class="text-muted mb-0"><sup style="font-size: larger; color: #cfd8dc;"><i class="fas fa-quote-left"></i></sup> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-12 col-md-4">
+			<div class="card border">
+				<div class="card-body">
+					<div class="d-flex">
+						<img src="{% static 'customer-2.jpg' %}" class="rounded-circle" style="height: 64px;">
+						<div class="ms-3">
+							<h5 class="mb-0">Emma Watson</h5>
+							<p class="mb-0 text-primary" style="letter-spacing: 4px;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+						</div>
+					</div>
+					<hr>
+					<div>
+						<p class="text-muted mb-0"><sup style="font-size: larger; color: #cfd8dc;"><i class="fas fa-quote-left"></i></sup> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-12 col-md-4">
+			<div class="card border">
+				<div class="card-body">
+					<div class="d-flex">
+						<img src="{% static 'customer-3.jpg' %}" class="rounded-circle" style="height: 64px;">
+						<div class="ms-3">
+							<h5 class="mb-0">Robert Downey Jr</h5>
+							<p class="mb-0 text-primary" style="letter-spacing: 4px;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half"></i></p>
+						</div>
+					</div>
+					<hr>
+					<div>
+						<p class="text-muted mb-0"><sup style="font-size: larger; color: #cfd8dc;"><i class="fas fa-quote-left"></i></sup> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<footer class="bg-light">
+	<div class="container">
+		<div class="py-2 text-center">
+			<a href="#" class="btn text-muted"><i class="fa-brands fa-facebook-f"></i></a>
+			<a href="#" class="btn text-muted"><i class="fa-brands fa-twitter"></i></a>
+			<a href="#" class="btn text-muted"><i class="fa-brands fa-instagram"></i></a>
+			<a href="#" class="btn text-muted"><i class="fa-brands fa-linkedin"></i></a>
+			<a href="#" class="btn text-muted"><i class="fa-brands fa-google"></i></a>
+		</div>
+	</div>
+	<div class="text-center py-3 border-top">
+    Copyright © 2023
+    <a class="text-secondary" href="/">Jainam P. Doshi</a>
+  </div>
+</footer>
+{% endblock %}

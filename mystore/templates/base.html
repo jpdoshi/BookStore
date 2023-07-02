@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'style.css' %}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
+	<title>{% block title %}{% endblock %} - Django Books</title>
+</head>
+<body>
+	<header class="border-bottom">
+	    <nav style="height: 64px; line-height: 64px;">
+	      <div class="container d-flex">
+	      	<div>
+	      		<a href="/"><img src="{% static 'logo.png' %}" style="height: 56px;"></a>
+	      	</div>
+	      	<div class="d-none d-lg-flex mx-4 flex-grow-1">
+		        <form class="my-auto d-flex w-100" action="/search" method="get">
+		        	<div class="input-group border rounded-1">
+			          <input type="search" name="q" class="form-control border-0" placeholder="Search for books" aria-label="Search">
+			          <button type="submit" class="btn" style="color: #455a64;"><i class="fas fa-search"></i></button>
+			      	</div>
+				    <a href="/register" class="ms-3 rounded-1 btn btn-primary">Register</a>
+		        </form>
+	        </div>
+	        <div class="ms-auto">
+	        	<a class="px-2" href="/wishlist"><i class="fas fa-heart"></i></a>
+	        	<a class="px-2" href="/user"><i class="fas fa-user-alt"></i></a>
+	        	<a class="px-2 position-relative" href="/cart"><i class="fas fa-shopping-cart"></i></a>
+	        </div>
+	      </div>
+	    </nav>
+      	<div class="container d-flex my-2 d-lg-none">
+	        <form class="d-flex w-100" action="/search" method="get">
+	        	<div class="input-group border rounded-1">
+		          <input type="search" name="q" class="form-control form-control-sm border-0" placeholder="Search for books" aria-label="Search">
+		          <button type="submit" class="btn btn-sm" style="color: #455a64;"><i class="fas fa-search"></i></button>
+		      	</div>
+			    <a href="/register" class="ms-2 rounded-1 btn btn-primary btn-sm">Register</a>
+	        </form>
+        </div>
+		<div class="container d-flex">
+			<div class="d-inline-flex py-2 overflow-auto align-items-center">
+			    <a class="me-3 dropdown-toggle btn btn-primary btn-sm" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categories</a>
+			    <a href="/" class="me-4">Home</a>
+			    <a href="/user" class="me-4">Profile</a>
+			    <a href="/orders" class="me-4">Orders</a>
+				<div class="dropdown-menu">
+				    <a class="dropdown-item" href="/categories/action">Action</a>
+				    <a class="dropdown-item" href="/categories/mystery">Mystery</a>
+				    <a class="dropdown-item" href="/categories/fantasy">Fantasy</a>
+				    <a class="dropdown-item" href="/categories/fiction">Fiction</a>
+					<a class="dropdown-item" href="/categories/literature">Literature</a>
+					<a class="dropdown-item" href="/categories/novel">Novel</a>
+				</div>
+			</div>
+		</div>
+	</header>
+	{% block content %}{% endblock %}
+</body>
+<script src="{% static 'bootstrap.bundle.min.js' %}"></script>
+</html>

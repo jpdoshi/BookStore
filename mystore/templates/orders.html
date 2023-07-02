@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}
+Orders
+{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+	<h1>Your Orders</h1>
+	<div class="my-4 overflow-auto">
+	<table class="table table-striped text-center align-middle">
+		<thead>
+			<tr>
+				<th>Order ID</th>
+				<th>Placed on</th>
+				<th>Address</th>
+				<th>Status</th>
+				<th>Amount</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+		{% for order in orders %}
+		<tr>
+			<td>{{ order.id }}</td>
+			<td>{{ order.duration }}</td>
+			<td>{{ order.address }}</td>
+			<td>{{ order.status }}</td>
+			<td>${{ order.amount|floatformat }}</td>
+			<td>
+				{% if order.status != "Canceled" and order.status != "Shipped"  %}
+				<a class="btn btn-danger btn-sm" href="{% url 'cancel-order' id=order.id %}"><i class="fas fa-close"></i> Cancel</a>
+				{% else %}
+				<a class="btn btn-danger btn-sm disabled" href="{% url 'cancel-order' id=order.id %}"><i class="fas fa-close"></i> Cancel</a>
+				{% endif %}
+			</td>
+		</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+	</div>
+</div>
+{% endblock %}
